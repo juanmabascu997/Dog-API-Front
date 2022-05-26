@@ -92,7 +92,7 @@ export default function CreateDog (){
             },
             temperament: body.temperament,
         }
-        axios.post(`http://localhost:3001/dog`, newBody)
+        axios.post(`https://dogs-api-deploy-juanmabascu.herokuapp.com/dog`, newBody)
         .then(()=>{
             alert(`You add a new dog to your family. Congrats`)
             navigate('/home')

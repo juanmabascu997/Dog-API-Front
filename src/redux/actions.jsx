@@ -1,7 +1,7 @@
 export function getAllTemperaments() {
   return async function(dispatch) {
     try{
-      let res = await fetch(`http://localhost:3001/temperament`)
+      let res = await fetch(`https://dogs-api-deploy-juanmabascu.herokuapp.com/temperament`)
       .then(response => response.json())
       return dispatch({ type: "GET_ALL_TEMPERAMENTS", payload: res });
     }catch(e){
@@ -12,7 +12,7 @@ export function getAllTemperaments() {
 
 export function getAllDogs() {
   return async function(dispatch) {
-    const response = await fetch(`http://localhost:3001/dogs`);
+    const response = await fetch(`https://dogs-api-deploy-juanmabascu.herokuapp.com/dogs`);
     const json = await response.json();
     return dispatch({ type: "GET_ALL_DOGS", payload: json });
   };
@@ -21,7 +21,7 @@ export function getAllDogs() {
 export function get_a_SingleDog(name) {
   return async function(dispatch) {
     try{
-      let res = await fetch(`http://localhost:3001/dogs?name=${name}`)
+      let res = await fetch(`https://dogs-api-deploy-juanmabascu.herokuapp.com/dogs?name=${name}`)
       .then(response => response.json())
       return dispatch({ type: "GET_A_DOG", payload: res });
     }catch(e){
@@ -55,7 +55,7 @@ export function setDogTemperament(temperament) {
 export function getDogByID(id) {
   return async function(dispatch) {
   try{
-      let res = await fetch(`http://localhost:3001/dogs/${id}`)
+      let res = await fetch(`https://dogs-api-deploy-juanmabascu.herokuapp.com/dogs/${id}`)
       .then(response => response.json())
       return dispatch({ type: "GET_DOG_BY_ID", payload: res });
   }catch(e){

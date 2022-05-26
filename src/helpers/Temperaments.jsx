@@ -46,7 +46,7 @@ export default function Temperaments() {
             newTemperament: [newTemperament]
         }
 
-        axios.post(`http://localhost:3001/temperament`, newBody)
+        axios.post(`https://dogs-api-deploy-juanmabascu.herokuapp.com/temperament`, newBody)
         .then(()=>{
             alert(`You add a new Temperament`)
             dispatch(getAllTemperaments())
