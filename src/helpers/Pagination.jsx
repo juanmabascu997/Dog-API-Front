@@ -121,9 +121,9 @@ function Pagination() {
                     dogsFromPage.map(function (e){
                         return <Card key={e.id}>
                             <div>
-                                <Image src={!e.image.url?awaitingImg:e.image.url} alt={e.name}></Image>
+                                <Image src={!e.image?.url?awaitingImg:e.image.url} alt={e.name}></Image>
                                 <Name>{e.name}</Name>
-                                <p>WEIGHT: {e.weight.metric} kg</p>
+                                <p>WEIGHT: {e.weight?.metric} kg</p>
                                 <Title>TEMPERAMENTS:</Title>
                                 <p>{e.temperament.map(e=>{return e.name+ " "})}</p>
                             </div>
